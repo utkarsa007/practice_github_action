@@ -27,7 +27,8 @@ jobs:
         run: npm ci
       - name: Run test
         run: npm test
-  Deploy:
+  deploy:
+    needs: [lint, test]
     runs-on: ubuntu-latest
     steps:
       - name: Get code
